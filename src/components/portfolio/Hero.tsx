@@ -64,7 +64,7 @@ export function Hero() {
 
             <div className="flex items-center gap-3 pt-2">
               <SocialIcon href="https://github.com/" label="GitHub"><Github className="h-4 w-4" /></SocialIcon>
-              <SocialIcon href="https://linkedin.com/" label="LinkedIn"><Linkedin className="h-4 w-4" /></SocialIcon>
+              <SocialIcon href="https://linkedin.com/in/khusheewanve" label="LinkedIn"><Linkedin className="h-4 w-4" /></SocialIcon>
               <SocialIcon href="mailto:khushiwanve2004@gmail.com" label="Email"><Mail className="h-4 w-4" /></SocialIcon>
             </div>
           </div>
