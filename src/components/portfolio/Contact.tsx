@@ -43,7 +43,7 @@ export function Contact() {
             <InfoRow icon={MapPin} label="Location" value="Nagpur, Maharashtra, India" />
             <div className="flex gap-3 pt-2">
               <a href="https://github.com/" target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-gradient-brand hover:text-[oklch(0.16_0.025_280)]"><Github className="h-4 w-4" /></a>
-              <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-gradient-brand hover:text-[oklch(0.16_0.025_280)]"><Linkedin className="h-4 w-4" /></a>
+              <a href="https://linkedin.com/in/khusheewanve" target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-gradient-brand hover:text-[oklch(0.16_0.025_280)]"><Linkedin className="h-4 w-4" /></a>
             </div>
           </div>
 
