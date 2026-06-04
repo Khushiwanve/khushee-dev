@@ -26,8 +26,11 @@ export function Contact() {
     const result = schema.safeParse(form);
     if (!result.success) {
       const errs: Record<string, string> = {};
-      result.error.issues.forEach((i) => { errs[i.path[0] as string] = i.message; });
+      result.error.issues.forEach((i) => {
+        errs[i.path[0] as string] = i.message;
+      });
       setErrors(errs);
+      toast.error("Please fix the highlighted fields before sending.");
       return;
     }
     setErrors({});
@@ -47,9 +50,17 @@ export function Contact() {
       );
       toast.success("Message sent! I'll get back to you soon.");
       setForm({ name: "", email: "", message: "" });
-    } catch (err) {
+    } catch (err: any) {
       console.error("EmailJS error:", err);
-      toast.error("Failed to send. Please try again or email directly.");
+      let msg = "Failed to send your message. Please try again or email directly at khushiwanve2004@gmail.com";
+      if (err?.status === 422) {
+        msg = "Service configuration issue. Please email me directly at khushiwanve2004@gmail.com.";
+      } else if (err?.status === 0 || err?.status >= 500) {
+        msg = "Network or server issue. Please check your connection and try again.";
+      } else if (err?.status === 429) {
+        msg = "Too many messages sent. Please wait a moment and try again.";
+      }
+      toast.error(msg, { duration: 6000 });
     } finally {
       setSending(false);
     }
