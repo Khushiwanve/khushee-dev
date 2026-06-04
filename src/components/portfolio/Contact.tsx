@@ -1,8 +1,14 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { SectionHeader } from "./SectionHeader";
 import { Mail, MapPin, Phone, Send, Github, Linkedin } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
+
+const EMAILJS_PUBLIC_KEY = "zLdWcW0cjbStgq4DZ";
+const EMAILJS_SERVICE_ID = "service_w0aqy5o";
+const EMAILJS_TEMPLATE_ID = "template_t21jyqb";
+
 
 const schema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
