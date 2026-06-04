@@ -21,7 +21,7 @@ export function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = schema.safeParse(form);
     if (!result.success) {
@@ -32,11 +32,29 @@ export function Contact() {
     }
     setErrors({});
     setSending(true);
-    const subject = encodeURIComponent(`Portfolio contact from ${result.data.name}`);
-    const body = encodeURIComponent(`${result.data.message}\n\n— ${result.data.name} (${result.data.email})`);
-    window.location.href = `mailto:khushiwanve2004@gmail.com?subject=${subject}&body=${body}`;
-    setTimeout(() => { setSending(false); toast.success("Opening your email client…"); }, 600);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: result.data.name,
+          from_email: result.data.email,
+          message: result.data.message,
+          reply_to: result.data.email,
+          to_email: "khushiwanve2004@gmail.com",
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+      toast.success("Message sent! I'll get back to you soon.");
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      toast.error("Failed to send. Please try again or email directly.");
+    } finally {
+      setSending(false);
+    }
   };
+
 
   return (
     <section id="contact" className="relative py-24">
