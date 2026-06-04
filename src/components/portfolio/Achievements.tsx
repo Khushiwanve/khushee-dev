@@ -4,7 +4,7 @@ const stats = [
   { value: 3, suffix: "+", label: "Major Projects" },
   { value: 2, suffix: "", label: "Internships" },
   { value: 3, suffix: "+", label: "Certifications" },
-  { value: 1, suffix: "", label: "MCA Candidate", isText: "MCA" },
+  { value: 1, suffix: "", label: "React Developer", isText: "React" },
 ];
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
