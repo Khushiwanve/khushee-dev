@@ -26,8 +26,11 @@ export function Contact() {
     const result = schema.safeParse(form);
     if (!result.success) {
       const errs: Record<string, string> = {};
-      result.error.issues.forEach((i) => { errs[i.path[0] as string] = i.message; });
+      result.error.issues.forEach((i) => {
+        errs[i.path[0] as string] = i.message;
+      });
       setErrors(errs);
+      toast.error("Please fix the highlighted fields before sending.");
       return;
     }
     setErrors({});
@@ -47,9 +50,17 @@ export function Contact() {
       );
       toast.success("Message sent! I'll get back to you soon.");
       setForm({ name: "", email: "", message: "" });
-    } catch (err) {
+    } catch (err: any) {
       console.error("EmailJS error:", err);
-      toast.error("Failed to send. Please try again or email directly.");
+      let msg = "Failed to send your message. Please try again or email directly at khushiwanve2004@gmail.com";
+      if (err?.status === 422) {
+        msg = "Service configuration issue. Please email me directly at khushiwanve2004@gmail.com.";
+      } else if (err?.status === 0 || err?.status >= 500) {
+        msg = "Network or server issue. Please check your connection and try again.";
+      } else if (err?.status === 429) {
+        msg = "Too many messages sent. Please wait a moment and try again.";
+      }
+      toast.error(msg, { duration: 6000 });
     } finally {
       setSending(false);
     }
@@ -75,9 +86,12 @@ export function Contact() {
             <Field label="Name" error={errors.name}>
               <input
                 value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                onChange={(e) => {
+                  setForm({ ...form, name: e.target.value });
+                  if (errors.name) setErrors((prev) => { const n = { ...prev }; delete n.name; return n; });
+                }}
                 maxLength={100}
-                className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)]"
+                className={`w-full rounded-xl border bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)] ${errors.name ? "border-red-400/70" : "border-white/10"}`}
                 placeholder="Your name"
               />
             </Field>
@@ -85,19 +99,25 @@ export function Contact() {
               <input
                 type="email"
                 value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                onChange={(e) => {
+                  setForm({ ...form, email: e.target.value });
+                  if (errors.email) setErrors((prev) => { const n = { ...prev }; delete n.email; return n; });
+                }}
                 maxLength={255}
-                className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)]"
+                className={`w-full rounded-xl border bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)] ${errors.email ? "border-red-400/70" : "border-white/10"}`}
                 placeholder="you@example.com"
               />
             </Field>
             <Field label="Message" error={errors.message}>
               <textarea
                 value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                onChange={(e) => {
+                  setForm({ ...form, message: e.target.value });
+                  if (errors.message) setErrors((prev) => { const n = { ...prev }; delete n.message; return n; });
+                }}
                 rows={5}
                 maxLength={1000}
-                className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)]"
+                className={`w-full resize-none rounded-xl border bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)] ${errors.message ? "border-red-400/70" : "border-white/10"}`}
                 placeholder="Tell me about your project or opportunity…"
               />
             </Field>
