@@ -86,9 +86,12 @@ export function Contact() {
             <Field label="Name" error={errors.name}>
               <input
                 value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                onChange={(e) => {
+                  setForm({ ...form, name: e.target.value });
+                  if (errors.name) setErrors((prev) => { const n = { ...prev }; delete n.name; return n; });
+                }}
                 maxLength={100}
-                className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)]"
+                className={`w-full rounded-xl border bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)] ${errors.name ? "border-red-400/70" : "border-white/10"}`}
                 placeholder="Your name"
               />
             </Field>
@@ -96,19 +99,25 @@ export function Contact() {
               <input
                 type="email"
                 value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                onChange={(e) => {
+                  setForm({ ...form, email: e.target.value });
+                  if (errors.email) setErrors((prev) => { const n = { ...prev }; delete n.email; return n; });
+                }}
                 maxLength={255}
-                className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)]"
+                className={`w-full rounded-xl border bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)] ${errors.email ? "border-red-400/70" : "border-white/10"}`}
                 placeholder="you@example.com"
               />
             </Field>
             <Field label="Message" error={errors.message}>
               <textarea
                 value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                onChange={(e) => {
+                  setForm({ ...form, message: e.target.value });
+                  if (errors.message) setErrors((prev) => { const n = { ...prev }; delete n.message; return n; });
+                }}
                 rows={5}
                 maxLength={1000}
-                className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)]"
+                className={`w-full resize-none rounded-xl border bg-white/[0.04] px-4 py-3 text-sm outline-none transition focus:border-[oklch(0.72_0.2_300/0.6)] ${errors.message ? "border-red-400/70" : "border-white/10"}`}
                 placeholder="Tell me about your project or opportunity…"
               />
             </Field>
