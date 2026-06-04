@@ -1,3 +1,5 @@
 {
-  "framework": "tanstack-start"
+  "buildCommand": "bun run build",
+  "framework": "tanstack-start",
+  "installCommand": "bun install"
 }
