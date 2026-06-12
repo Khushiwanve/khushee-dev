@@ -52,7 +52,7 @@ export function Experience() {
                       {item.period}
                     </div>
                     <h3 className="text-xl font-semibold">{item.role}</h3>
-                    <p className="text-sm text-[oklch(0.78_0.18_320)]">
+                    <p className="text-sm text-primary">
                       {item.company} · {item.location}
                     </p>
                     <ul className={`mt-4 space-y-2 text-sm text-muted-foreground ${i % 2 ? "md:list-none" : ""}`}>

@@ -1,39 +1,41 @@
-import { Download, Mail, Github, Linkedin, ArrowRight, Sparkles } from "lucide-react";
+import { Download, Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
 
-const stack = ["React", "Java", "JavaScript", "Python", "REST APIs", "SQL", "Git", "Vercel"];
+const stack = ["React", "TypeScript", "Java", "Python", "REST APIs", "SQL", "Node.js", "Git", "Vercel", "Tailwind"];
 
 export function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen items-center pt-32 pb-20">
-      <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 rounded-full glass px-3 py-1.5 font-mono text-xs text-muted-foreground">
-              <span className="relative flex h-2 w-2">
+    <section id="home" className="relative flex min-h-screen items-center pt-36 pb-24">
+      <div className="mx-auto w-full max-w-7xl px-6">
+        <div className="grid items-center gap-16 lg:grid-cols-[1.6fr_1fr]">
+          <div className="space-y-10 animate-fade-up">
+            <div className="inline-flex items-center gap-2.5 rounded-full glass px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+              <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
               </span>
-              Available for opportunities
+              Available for select projects · 2026
             </div>
 
-            <div className="space-y-2">
-              <p className="font-mono text-lg text-muted-foreground md:text-xl">
-                <span className="text-[oklch(0.78_0.18_320)]">Namaste()</span>; I'm
+            <div className="space-y-3">
+              <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
+                Khushi Wanve
               </p>
-              <h1 className="text-5xl font-bold tracking-tight md:text-7xl lg:text-[5.5rem] lg:leading-[1.05]">
-                <span className="text-gradient">Khushi Wanve.</span>
+              <h1 className="font-display text-[clamp(3.5rem,9vw,8rem)] leading-[0.95] tracking-tight">
+                <span className="text-gradient block">Designing</span>
+                <span className="block">
+                  <em className="font-display italic text-gradient-brand">considered</em>
+                  <span className="text-gradient"> software.</span>
+                </span>
               </h1>
-              <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-                I design &amp; code for web.
-              </h2>
             </div>
 
-            <div className="max-w-xl space-y-3 text-muted-foreground">
-              <p className="text-base md:text-lg">
-                Full Stack Developer · React Developer · MCA Student
+            <div className="max-w-xl space-y-4">
+              <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
+                A full-stack developer crafting refined, performant web experiences —
+                where engineering precision meets editorial taste.
               </p>
-              <p>
-                Building modern, scalable, and user-focused web experiences through clean code and thoughtful design.
+              <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground/70">
+                React · TypeScript · Java · REST APIs
               </p>
             </div>
 
@@ -41,24 +43,24 @@ export function Hero() {
               <a
                 href="/Khushi_Wanve_Resume.pdf"
                 download
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-brand px-6 py-3 text-sm font-medium text-[oklch(0.16_0.025_280)] transition-transform hover:scale-[1.03]"
+                className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black transition-all hover:bg-white/90"
               >
                 <Download className="h-4 w-4" />
-                Download Resume
+                Download Résumé
               </a>
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition-colors hover:bg-[oklch(1_0_0/0.08)]"
+                className="group inline-flex items-center gap-2 rounded-full glass px-6 py-3.5 text-sm font-medium transition-all hover:bg-white/[0.06]"
               >
-                View Projects
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                Selected Work
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground"
+                className="inline-flex items-center gap-2 px-3 py-3.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Mail className="h-4 w-4" />
-                Contact Me
+                Get in touch
               </a>
             </div>
 
@@ -69,55 +71,52 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Avatar card */}
+          {/* Editorial card */}
           <div className="relative mx-auto w-full max-w-sm">
-            <div className="absolute -inset-1 rounded-3xl bg-gradient-brand opacity-40 blur-2xl" />
-            <div className="glass-strong relative overflow-hidden rounded-3xl p-6">
-              <div className="flex items-center justify-between font-mono text-xs text-muted-foreground">
-                <div className="flex gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
-                </div>
-                <span>~/khushi.dev</span>
+            <div className="absolute -inset-2 rounded-[2rem] bg-primary/20 blur-3xl opacity-60" />
+            <div className="glass-strong relative overflow-hidden rounded-[2rem] p-8">
+              <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                <span>Portfolio</span>
+                <span>MMXXVI</span>
               </div>
 
-              <div className="relative mx-auto my-6 h-44 w-44 animate-float">
-                <div className="absolute inset-0 rounded-full bg-gradient-brand blur-2xl opacity-60" />
-                <div className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-brand text-6xl font-bold text-[oklch(0.16_0.025_280)] shadow-2xl">
-                  KW
+              <div className="relative mx-auto my-10 h-48 w-48 animate-float">
+                <div className="absolute inset-0 rounded-full bg-gradient-brand blur-3xl opacity-50" />
+                <div className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-brand font-display text-7xl italic text-white shadow-2xl">
+                  Kw
                 </div>
-                <Sparkles className="absolute -right-2 top-2 h-6 w-6 text-[oklch(0.78_0.18_320)] animate-pulse" />
               </div>
 
-              <div className="space-y-2 font-mono text-xs">
-                <div className="text-muted-foreground">
-                  <span className="text-[oklch(0.78_0.18_320)]">const</span>{" "}
-                  <span className="text-[oklch(0.8_0.15_200)]">developer</span> = {"{"}
+              <div className="space-y-4 border-t border-white/5 pt-6">
+                <div className="flex justify-between text-xs">
+                  <span className="uppercase tracking-[0.2em] text-muted-foreground">Role</span>
+                  <span className="text-foreground">Full Stack Developer</span>
                 </div>
-                <div className="pl-4 text-muted-foreground">
-                  role: <span className="text-[oklch(0.85_0.12_140)]">"Full Stack"</span>,
+                <div className="flex justify-between text-xs">
+                  <span className="uppercase tracking-[0.2em] text-muted-foreground">Based</span>
+                  <span className="text-foreground">Nagpur, India</span>
                 </div>
-                <div className="pl-4 text-muted-foreground">
-                  loves: <span className="text-[oklch(0.85_0.12_140)]">"clean code"</span>,
+                <div className="flex justify-between text-xs">
+                  <span className="uppercase tracking-[0.2em] text-muted-foreground">Studying</span>
+                  <span className="text-foreground">MCA</span>
                 </div>
-                <div className="pl-4 text-muted-foreground">
-                  location: <span className="text-[oklch(0.85_0.12_140)]">"Nagpur, IN"</span>,
+                <div className="flex justify-between text-xs">
+                  <span className="uppercase tracking-[0.2em] text-muted-foreground">Status</span>
+                  <span className="text-emerald-400">Open to work</span>
                 </div>
-                <div className="text-muted-foreground">{"};"}</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Marquee */}
-        <div className="relative mt-16 overflow-hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-background to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-background to-transparent" />
-          <div className="flex gap-3 animate-marquee whitespace-nowrap">
+        <div className="relative mt-24 overflow-hidden border-y border-white/5 py-6">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-background to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-background to-transparent" />
+          <div className="flex gap-12 animate-marquee whitespace-nowrap">
             {[...stack, ...stack, ...stack].map((s, i) => (
-              <span key={i} className="rounded-full glass px-5 py-2 font-mono text-sm text-muted-foreground">
-                {s}
+              <span key={i} className="font-display text-2xl italic text-muted-foreground/60">
+                {s} <span className="ml-12 text-primary/40">✦</span>
               </span>
             ))}
           </div>
@@ -134,7 +133,7 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
       aria-label={label}
       target="_blank"
       rel="noreferrer"
-      className="flex h-10 w-10 items-center justify-center rounded-full glass text-muted-foreground transition-all hover:scale-110 hover:bg-gradient-brand hover:text-[oklch(0.16_0.025_280)]"
+      className="flex h-11 w-11 items-center justify-center rounded-full glass text-muted-foreground transition-all hover:scale-105 hover:bg-white hover:text-black"
     >
       {children}
     </a>

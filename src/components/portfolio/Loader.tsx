@@ -13,7 +13,7 @@ export function Loader() {
     >
       <div className="relative">
         <div className="absolute inset-0 rounded-full bg-gradient-brand opacity-50 blur-2xl" />
-        <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-brand font-mono text-xl font-bold text-[oklch(0.16_0.025_280)]">
+        <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-brand font-mono text-xl font-bold text-white">
           KW
         </div>
         <div className="mt-4 text-center font-mono text-xs text-muted-foreground">loading…</div>

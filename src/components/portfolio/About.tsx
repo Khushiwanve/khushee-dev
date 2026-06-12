@@ -28,7 +28,7 @@ export function About() {
           <div className="grid grid-cols-2 gap-4">
             {traits.map((t) => (
               <div key={t.title} className="glass group relative overflow-hidden rounded-2xl p-5 transition-all hover:-translate-y-1 hover:bg-[oklch(1_0_0/0.07)]">
-                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-brand text-[oklch(0.16_0.025_280)]">
+                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-brand text-white">
                   <t.icon className="h-5 w-5" />
                 </div>
                 <h3 className="font-semibold">{t.title}</h3>

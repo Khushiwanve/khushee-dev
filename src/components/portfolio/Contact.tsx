@@ -77,8 +77,8 @@ export function Contact() {
             <InfoRow icon={Phone} label="Phone" value="+91 7972308556" href="tel:+917972308556" />
             <InfoRow icon={MapPin} label="Location" value="Nagpur, Maharashtra, India" />
             <div className="flex gap-3 pt-2">
-              <a href="https://github.com/" target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-gradient-brand hover:text-[oklch(0.16_0.025_280)]"><Github className="h-4 w-4" /></a>
-              <a href="https://linkedin.com/in/khusheewanve" target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-gradient-brand hover:text-[oklch(0.16_0.025_280)]"><Linkedin className="h-4 w-4" /></a>
+              <a href="https://github.com/" target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-gradient-brand hover:text-white"><Github className="h-4 w-4" /></a>
+              <a href="https://linkedin.com/in/khusheewanve" target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full glass hover:bg-gradient-brand hover:text-white"><Linkedin className="h-4 w-4" /></a>
             </div>
           </div>
 
@@ -124,7 +124,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={sending}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-medium text-[oklch(0.16_0.025_280)] transition-transform hover:scale-[1.02] disabled:opacity-60"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-medium text-white transition-transform hover:scale-[1.02] disabled:opacity-60"
             >
               <Send className="h-4 w-4" />
               {sending ? "Sending…" : "Send Message"}
@@ -139,7 +139,7 @@ export function Contact() {
 function InfoRow({ icon: Icon, label, value, href }: { icon: any; label: string; value: string; href?: string }) {
   const inner = (
     <div className="glass flex items-center gap-4 rounded-2xl p-5 transition-all hover:-translate-y-0.5 hover:bg-[oklch(1_0_0/0.07)]">
-      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-brand text-[oklch(0.16_0.025_280)]">
+      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-brand text-white">
         <Icon className="h-5 w-5" />
       </div>
       <div>
