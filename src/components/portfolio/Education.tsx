@@ -34,12 +34,12 @@ export function Education() {
           <div className="space-y-4">
             {education.map((e) => (
               <div key={e.degree} className="glass flex gap-4 rounded-2xl p-5 transition-all hover:-translate-y-0.5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-[oklch(0.16_0.025_280)]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-white">
                   <GraduationCap className="h-5 w-5" />
                 </div>
                 <div>
                   <h3 className="font-semibold">{e.degree}</h3>
-                  <p className="text-sm text-[oklch(0.78_0.18_320)]">{e.school}</p>
+                  <p className="text-sm text-primary">{e.school}</p>
                   <p className="mt-1 font-mono text-xs text-muted-foreground">{e.period}</p>
                 </div>
               </div>
@@ -47,7 +47,7 @@ export function Education() {
           </div>
           <div className="glass-strong rounded-2xl p-6">
             <div className="mb-4 flex items-center gap-2">
-              <Award className="h-5 w-5 text-[oklch(0.78_0.18_320)]" />
+              <Award className="h-5 w-5 text-primary" />
               <h3 className="text-lg font-semibold">Certifications</h3>
             </div>
             <ul className="space-y-3">

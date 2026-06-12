@@ -29,7 +29,7 @@ export function Skills() {
           {groups.map((g) => (
             <div key={g.title} className="glass group relative overflow-hidden rounded-2xl p-6 transition-all hover:-translate-y-1">
               <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-gradient-brand opacity-0 blur-3xl transition-opacity group-hover:opacity-30" />
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-brand text-[oklch(0.16_0.025_280)]">
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-brand text-white">
                 <g.icon className="h-5 w-5" />
               </div>
               <h3 className="mb-4 text-lg font-semibold">{g.title}</h3>
@@ -46,10 +46,10 @@ export function Skills() {
 
         {/* Technical strengths */}
         <div className="mt-12">
-          <h3 className="mb-5 font-mono text-sm text-[oklch(0.78_0.18_320)]">{"<TechnicalStrengths/>"}</h3>
+          <h3 className="mb-5 font-mono text-sm text-primary">{"<TechnicalStrengths/>"}</h3>
           <div className="flex flex-wrap gap-3">
             {strengths.map((s) => (
-              <span key={s} className="glass rounded-full px-4 py-2 text-sm transition-all hover:bg-gradient-brand hover:text-[oklch(0.16_0.025_280)]">
+              <span key={s} className="glass rounded-full px-4 py-2 text-sm transition-all hover:bg-gradient-brand hover:text-white">
                 {s}
               </span>
             ))}

@@ -56,7 +56,7 @@ export function Projects() {
                 onClick={() => setActive(f)}
                 className={`rounded-full px-4 py-1.5 font-mono text-xs transition-all ${
                   active === f
-                    ? "bg-gradient-brand text-[oklch(0.16_0.025_280)]"
+                    ? "bg-gradient-brand text-white"
                     : "glass text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -92,7 +92,7 @@ export function Projects() {
                   <a href="https://github.com/" target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full glass px-3 py-2 text-xs font-medium hover:bg-white/10">
                     <Github className="h-3.5 w-3.5" /> Code
                   </a>
-                  <a href="#" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-brand px-3 py-2 text-xs font-medium text-[oklch(0.16_0.025_280)]">
+                  <a href="#" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-brand px-3 py-2 text-xs font-medium text-white">
                     <ExternalLink className="h-3.5 w-3.5" /> Live
                   </a>
                 </div>
