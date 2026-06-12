@@ -46,7 +46,7 @@ export function Skills() {
 
         {/* Technical strengths */}
         <div className="mt-12">
-          <h3 className="mb-5 font-mono text-sm text-primary">{"<TechnicalStrengths/>"}</h3>
+          <h3 className="mb-5 text-xs uppercase tracking-[0.25em] text-muted-foreground">Technical Strengths</h3>
           <div className="flex flex-wrap gap-3">
             {strengths.map((s) => (
               <span key={s} className="glass rounded-full px-4 py-2 text-sm transition-all hover:bg-gradient-brand hover:text-white">
