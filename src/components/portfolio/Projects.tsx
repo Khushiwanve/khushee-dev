@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { SectionHeader } from "./SectionHeader";
 import { Github, ExternalLink } from "lucide-react";
+import krishiMitraImg from "@/assets/projects/krishi-mitra.png.asset.json";
+import movieReviewImg from "@/assets/projects/movie-review.png.asset.json";
+import jobHuntImg from "@/assets/projects/job-hunt.png.asset.json";
 
 type Project = {
   name: string;
@@ -9,6 +12,7 @@ type Project = {
   category: "Full Stack" | "Frontend" | "API";
   accent: string;
   glyph: string;
+  image: string;
 };
 
 const projects: Project[] = [
@@ -19,6 +23,7 @@ const projects: Project[] = [
     category: "Full Stack",
     accent: "from-violet-500/30 to-fuchsia-500/30",
     glyph: "JH",
+    image: jobHuntImg.url,
   },
   {
     name: "Movie Rating & Review",
@@ -27,6 +32,7 @@ const projects: Project[] = [
     category: "API",
     accent: "from-indigo-500/30 to-cyan-500/30",
     glyph: "MR",
+    image: movieReviewImg.url,
   },
   {
     name: "KRISHI-MITRA",
@@ -35,6 +41,7 @@ const projects: Project[] = [
     category: "Frontend",
     accent: "from-emerald-500/30 to-teal-500/30",
     glyph: "KM",
+    image: krishiMitraImg.url,
   },
 ];
 
@@ -70,10 +77,13 @@ export function Projects() {
           {visible.map((p) => (
             <article key={p.name} className="glass group relative flex flex-col overflow-hidden rounded-2xl transition-all hover:-translate-y-1 hover:bg-[oklch(1_0_0/0.06)]">
               <div className={`relative h-44 overflow-hidden bg-gradient-to-br ${p.accent}`}>
-                <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl font-bold text-white/80 drop-shadow-lg">{p.glyph}</span>
-                </div>
+                <img
+                  src={p.image}
+                  alt={`${p.name} preview`}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
                 <div className="absolute top-3 left-3 rounded-full glass-strong px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-foreground/80">
                   {p.category}
                 </div>
