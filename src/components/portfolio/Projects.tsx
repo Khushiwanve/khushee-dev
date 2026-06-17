@@ -13,6 +13,7 @@ type Project = {
   accent: string;
   glyph: string;
   image: string;
+  liveUrl: string;
 };
 
 const projects: Project[] = [
@@ -24,6 +25,7 @@ const projects: Project[] = [
     accent: "from-violet-500/30 to-fuchsia-500/30",
     glyph: "JH",
     image: jobHuntImg.url,
+    liveUrl: "https://jobby-new.vercel.app/",
   },
   {
     name: "Movie Rating & Review",
@@ -33,6 +35,7 @@ const projects: Project[] = [
     accent: "from-indigo-500/30 to-cyan-500/30",
     glyph: "MR",
     image: movieReviewImg.url,
+    liveUrl: "https://project-jan2026-fmh7.vercel.app/",
   },
   {
     name: "KRISHI-MITRA",
@@ -42,6 +45,7 @@ const projects: Project[] = [
     accent: "from-emerald-500/30 to-teal-500/30",
     glyph: "KM",
     image: krishiMitraImg.url,
+    liveUrl: "https://academic-project-henna.vercel.app/",
   },
 ];
 
