@@ -13,6 +13,7 @@ type Project = {
   accent: string;
   glyph: string;
   image: string;
+  liveUrl: string;
 };
 
 const projects: Project[] = [
@@ -24,6 +25,7 @@ const projects: Project[] = [
     accent: "from-violet-500/30 to-fuchsia-500/30",
     glyph: "JH",
     image: jobHuntImg.url,
+    liveUrl: "https://jobby-new.vercel.app/",
   },
   {
     name: "Movie Rating & Review",
@@ -33,6 +35,7 @@ const projects: Project[] = [
     accent: "from-indigo-500/30 to-cyan-500/30",
     glyph: "MR",
     image: movieReviewImg.url,
+    liveUrl: "https://project-jan2026-fmh7.vercel.app/",
   },
   {
     name: "KRISHI-MITRA",
@@ -42,6 +45,7 @@ const projects: Project[] = [
     accent: "from-emerald-500/30 to-teal-500/30",
     glyph: "KM",
     image: krishiMitraImg.url,
+    liveUrl: "https://academic-project-henna.vercel.app/",
   },
 ];
 
@@ -102,7 +106,7 @@ export function Projects() {
                   <a href="https://github.com/" target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full glass px-3 py-2 text-xs font-medium hover:bg-white/10">
                     <Github className="h-3.5 w-3.5" /> Code
                   </a>
-                  <a href="#" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-brand px-3 py-2 text-xs font-medium text-white">
+                  <a href={p.liveUrl} target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-brand px-3 py-2 text-xs font-medium text-white">
                     <ExternalLink className="h-3.5 w-3.5" /> Live
                   </a>
                 </div>
