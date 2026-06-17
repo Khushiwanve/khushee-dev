@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { SectionHeader } from "./SectionHeader";
 import { Github, ExternalLink } from "lucide-react";
+import krishiMitraImg from "@/assets/projects/krishi-mitra.png.asset.json";
+import movieReviewImg from "@/assets/projects/movie-review.png.asset.json";
+import jobHuntImg from "@/assets/projects/job-hunt.png.asset.json";
 
 type Project = {
   name: string;
@@ -9,6 +12,7 @@ type Project = {
   category: "Full Stack" | "Frontend" | "API";
   accent: string;
   glyph: string;
+  image: string;
 };
 
 const projects: Project[] = [
@@ -19,6 +23,7 @@ const projects: Project[] = [
     category: "Full Stack",
     accent: "from-violet-500/30 to-fuchsia-500/30",
     glyph: "JH",
+    image: jobHuntImg.url,
   },
   {
     name: "Movie Rating & Review",
@@ -27,6 +32,7 @@ const projects: Project[] = [
     category: "API",
     accent: "from-indigo-500/30 to-cyan-500/30",
     glyph: "MR",
+    image: movieReviewImg.url,
   },
   {
     name: "KRISHI-MITRA",
@@ -35,6 +41,7 @@ const projects: Project[] = [
     category: "Frontend",
     accent: "from-emerald-500/30 to-teal-500/30",
     glyph: "KM",
+    image: krishiMitraImg.url,
   },
 ];
 
