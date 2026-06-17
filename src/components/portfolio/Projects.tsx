@@ -106,7 +106,7 @@ export function Projects() {
                   <a href="https://github.com/" target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full glass px-3 py-2 text-xs font-medium hover:bg-white/10">
                     <Github className="h-3.5 w-3.5" /> Code
                   </a>
-                  <a href="#" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-brand px-3 py-2 text-xs font-medium text-white">
+                  <a href={p.liveUrl} target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-brand px-3 py-2 text-xs font-medium text-white">
                     <ExternalLink className="h-3.5 w-3.5" /> Live
                   </a>
                 </div>
