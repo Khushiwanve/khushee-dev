@@ -14,6 +14,7 @@ type Project = {
   glyph: string;
   image: string;
   liveUrl: string;
+  codeUrl: string;
 };
 
 const projects: Project[] = [
@@ -26,6 +27,7 @@ const projects: Project[] = [
     glyph: "JH",
     image: jobHuntImg.url,
     liveUrl: "https://jobby-new.vercel.app/",
+    codeUrl: "https://github.com/Khushiwanve/Jobee-React",
   },
   {
     name: "Movie Rating & Review",
@@ -36,6 +38,7 @@ const projects: Project[] = [
     glyph: "MR",
     image: movieReviewImg.url,
     liveUrl: "https://project-jan2026-fmh7.vercel.app/",
+    codeUrl: "https://github.com/Khushiwanve/ProjectJan2026",
   },
   {
     name: "KRISHI-MITRA",
@@ -46,6 +49,7 @@ const projects: Project[] = [
     glyph: "KM",
     image: krishiMitraImg.url,
     liveUrl: "https://academic-project-henna.vercel.app/",
+    codeUrl: "https://github.com/Khushiwanve/Academic-Project-",
   },
 ];
 
@@ -103,7 +107,7 @@ export function Projects() {
                   ))}
                 </div>
                 <div className="mt-5 flex gap-2">
-                  <a href="https://github.com/" target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full glass px-3 py-2 text-xs font-medium hover:bg-white/10">
+                  <a href={p.codeUrl} target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full glass px-3 py-2 text-xs font-medium hover:bg-white/10">
                     <Github className="h-3.5 w-3.5" /> Code
                   </a>
                   <a href={p.liveUrl} target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-brand px-3 py-2 text-xs font-medium text-white">
