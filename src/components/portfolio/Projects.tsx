@@ -4,6 +4,7 @@ import { Github, ExternalLink } from "lucide-react";
 import krishiMitraImg from "@/assets/projects/krishi-mitra.png.asset.json";
 import movieReviewImg from "@/assets/projects/movie-review.png.asset.json";
 import jobHuntImg from "@/assets/projects/job-hunt.png.asset.json";
+import taskflowImg from "@/assets/projects/taskflow-ai.png.asset.json";
 
 type Project = {
   name: string;
@@ -50,6 +51,17 @@ const projects: Project[] = [
     image: krishiMitraImg.url,
     liveUrl: "https://academic-project-henna.vercel.app/",
     codeUrl: "https://github.com/Khushiwanve/Academic-Project-",
+  },
+  {
+    name: "TaskFlow AI",
+    description: "Modern task management web app to organize, prioritize, and track daily tasks with a clean, responsive UX and smooth workflows.",
+    tech: ["React", "REST APIs", "Tailwind"],
+    category: "API",
+    accent: "from-purple-500/30 to-pink-500/30",
+    glyph: "TF",
+    image: taskflowImg.url,
+    liveUrl: "https://task-ai-azure.vercel.app/",
+    codeUrl: "https://github.com/Khushiwanve/task-ai",
   },
 ];
 
