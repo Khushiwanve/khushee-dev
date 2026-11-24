@@ -21,6 +21,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Khushi Wanve is a Full Stack Developer specializing in React, Java, and REST APIs. Building modern, scalable, user-focused web experiences." },
       { property: "og:title", content: "Khushi Wanve — Full Stack Developer" },
       { property: "og:description", content: "Portfolio of Khushi Wanve — React Developer, MCA student building modern web experiences." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Index,

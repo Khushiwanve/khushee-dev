@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -34,7 +35,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -77,18 +78,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
+      { title: "Khushi Wanve — Portfolio" },
       { name: "description", content: "Khushi's Digital Canvas is a modern, premium personal portfolio website for a Software Developer." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
+      { name: "author", content: "Khushi Wanve" },
+      { property: "og:title", content: "Khushi Wanve — Portfolio" },
       { property: "og:description", content: "Khushi's Digital Canvas is a modern, premium personal portfolio website for a Software Developer." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
+      { name: "twitter:title", content: "Khushi Wanve — Portfolio" },
       { name: "twitter:description", content: "Khushi's Digital Canvas is a modern, premium personal portfolio website for a Software Developer." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/842c3bfa-1983-4c6d-a55b-3d45444061e5/id-preview-e8774b27--b56b495a-20c6-4451-8828-3ee5eca8d0bc.lovable.app-1780466816501.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/842c3bfa-1983-4c6d-a55b-3d45444061e5/id-preview-e8774b27--b56b495a-20c6-4451-8828-3ee5eca8d0bc.lovable.app-1780466816501.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

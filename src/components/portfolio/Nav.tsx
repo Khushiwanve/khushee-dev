@@ -52,13 +52,6 @@ export function Nav() {
             );
           })}
         </ul>
-        <a
-          href="/Khushi_Wanve_Resume.pdf"
-          download
-          className="rounded-full bg-white px-4 py-2 text-xs font-medium text-black transition-all hover:bg-white/90"
-        >
-          Résumé
-        </a>
       </nav>
     </header>
   );

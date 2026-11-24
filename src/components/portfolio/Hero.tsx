@@ -1,4 +1,4 @@
-import { Download, Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
 
 const stack = ["React", "TypeScript", "Java", "Python", "REST APIs", "SQL", "Node.js", "Git", "Vercel", "Tailwind"];
 
@@ -40,14 +40,6 @@ export function Hero() {
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
-              <a
-                href="/Khushi_Wanve_Resume.pdf"
-                download
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black transition-all hover:bg-white/90"
-              >
-                <Download className="h-4 w-4" />
-                Download Résumé
-              </a>
               <a
                 href="#projects"
                 className="group inline-flex items-center gap-2 rounded-full glass px-6 py-3.5 text-sm font-medium transition-all hover:bg-white/[0.06]"
